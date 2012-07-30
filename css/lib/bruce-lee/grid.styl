@@ -1,0 +1,54 @@
+// Defaults which you can freely override
+_columnWidth = 60
+_gutterWidth = 12
+_columns = 12
+
+// Utility variable — you should never need to modify this
+_gridSystemWidth = (_columnWidth * _columns) + (_gutterWidth * _columns) * 1px
+
+// Set _totalWidth to 100% for a fluid layout
+//_totalWidth = _gridSystemWidth
+_totalWidth = 100%
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+clearfix()
+    *zoom 1
+    &:before,
+    &:after
+        content ""
+        display table
+    &:after
+        clear both
+
+//////////
+// GRID //
+//////////
+
+body
+    width 100%
+    clearfix()
+
+row(_columns = _columns)
+    display block
+    width _totalWidth * ((_gutterWidth + _gridSystemWidth) / _gridSystemWidth)
+    margin 0 _totalWidth * (((_gutterWidth * .5) / _gridsysteWidth) * -1);
+    clearfix()
+
+column(_x, _columns = _columns)
+    display inline
+    float left
+
+    width 
+
+    width _totalWidth * ((((_gutterWidth + _columnWidth) * _x) - _gutterWidth) / _gridSystemWidth)
+    margin 0 _totalWidth * ((_gutterWidth * .5) / _gridSystemWidth)
+    &:first-child
+        margin 0 _totalWidth * ((_gutterWidth * .5) / _gridSystemWidth) 0 0
+    &:last-child
+        margin 0 0 0 _totalWidth * ((_gutterWidth * .5) / _gridSystemWidth)
+
+push(_offset = 1)
+    margin-left _totalWidth * (((_gutterWidth + _columnWidth) * _offset) / _gridSystemWidth) + _totalWidth * ((_gutterWidth * .5) / _gridSystemWidth)
+
+pull(_offset = 1)
+    margin-right _totalWidth * (((_gutterWidth + _columnWidth) * _offset) / _gridSystemWidth) + _totalWidth * ((_gutterWidth * .5) / _gridSystemWidth)
