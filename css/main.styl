@@ -1,45 +1,102 @@
 @import "lib/bruce-lee/grid.styl"
 @import "lib/nib/index.styl"
 @import "lib/mohu-mixins/index.styl"
+@import "lib/font-awesome/font-awesome"
 
 ////////////
 // LAYOUT //
 ////////////
 
-_totalWidth = 320px
+_totalWidth = 320px // remove later - for testing only
+_gutter = _innerGutter
 
 body
     width _totalWidth
 
+
+// buttons
+.button
+  button()
+
+// prev-next
+div.prev-next
+  clearfix()
+  padding 0.5em 0 1.5em
+  a.prev
+    prev-next(prev)
+  a.next
+    prev-next(next)
+
 // header
 header#top
-    margin-bottom 1em
-    background #000
-    h1
-        font-size 2em
-        color white
-        margin 0
-        padding 20px
+  margin-bottom _gutter
+  background #000
+  position relative
+  clearfix()
+  text-align center
+  h1
+    font-size 2em
+    color white
+    margin 0 auto
+    padding 20px
+  div#account-buttons
+    display block
+    width 100%
+    position absolute
+    left 0
+    top 25%
+    #btn-login
+      float left
+    #btn-join
+      float right
+
+// nav
+nav
+  grid-container()
+  ul
+    grid()
+    li
+      column(4)
+      a
+        button()
 
 // main column & sidebar
-#maincolumn
-    column(9)
-    background #ffcc00
+#main
+  grid-container()
+
+section#slots
+  header
+    margin-bottom _gutter
+    img
+      display block
+      width 100%
+  section#slot-game
     ul
-        strip-list()
-        clearfix()
-        background #000
-        li
-            column(3)
-            background #990000
-            img
-                width 100%
-#sidebar
-    column(3)
-    background #ccc
+      grid()
+      li
+        column(6)
+        img
+          width 100%
+
+section#playing-now
+  header
+    margin-bottom _gutter
+    img
+      display block
+      width 100%
+  section#players
+    ul
+      grid()
+      li
+        column(3)
+        img
+          width 100%
+
+section#find-games
+  a
+    margin-bottom _gutter
 
 @media screen and (max-width: 720px)
-    #maincolumn,
-    #sidebar
-        column(12)
-        margin-bottom 1em
+  #maincolumn
+    column(4)
+    margin-bottom 1em
