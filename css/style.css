@@ -1212,16 +1212,6 @@ section#playing-now section#players ul li img {
 section#find-games a {
   margin-bottom: 4%;
 }
-@media screen and (max-width: 720px) {
-  #maincolumn {
-    display: inline;
-    float: left;
-    width: 29.487179486%;
-    margin-left: 4% !important;
-    margin-bottom: 4% !important;
-    margin-bottom: 1em;
-  }
-}
 /* ========================================================================== */
 /* ==|== media queries ====================================================== */
 @media only screen and (min-width: 800px) {
