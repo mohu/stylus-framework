@@ -1082,7 +1082,7 @@ nav ul:after {
 nav ul li {
   display: inline;
   float: left;
-  width: 29.487179486%;
+  width: 29.286128593213633%;
   margin-left: 4% !important;
   margin-bottom: 4% !important;
 }
@@ -1168,7 +1168,7 @@ section#slots section#slot-game ul:after {
 section#slots section#slot-game ul li {
   display: inline;
   float: left;
-  width: 46.153846152%;
+  width: 45.83915779807351%;
   margin-left: 4% !important;
   margin-bottom: 4% !important;
 }
@@ -1202,7 +1202,7 @@ section#playing-now section#players ul:after {
 section#playing-now section#players ul li {
   display: inline;
   float: left;
-  width: 21.153846153%;
+  width: 21.00961399078369%;
   margin-left: 4% !important;
   margin-bottom: 4% !important;
 }
